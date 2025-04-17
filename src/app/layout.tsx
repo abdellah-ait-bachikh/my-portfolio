@@ -7,10 +7,10 @@ const rubikSans = Rubik({
   variable: "--font-rubik-sans",
   subsets: ["latin"],
 });
-const rubikMon = Rubik({
-  variable: "--font-rubik-mono",
-  subsets: ["latin"],
-});
+// const rubikMon = Rubik({
+//   variable: "--font-rubik-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
   title: "Abdellah | Full-Stack Developer Portfolio",
@@ -59,9 +59,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="">
       <body
-        className={`${rubikSans.variable} ${rubikMon.variable} antialiased bg-fixed bg-gradient-to-br from-pink-100 via-gray-100 to-green-100 min-h-screen dark:from-slate-900 dark:via-slate-800/95 dark:to-slate-800/90 text-black dark:text-white relative`}
+        className={`${rubikSans.variable}  antialiased bg-fixed bg-gradient-to-br from-pink-100 via-gray-100 to-green-100 min-h-screen dark:from-slate-900 dark:via-slate-800/95 dark:to-slate-800/90 text-black dark:text-white relative`}
       >
         <Header />
         <main className="min-h-[200vh]">{children}</main>
