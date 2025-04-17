@@ -75,18 +75,52 @@
   --color-info-900: #004D40;
 
   /* Gray Color Shades */
-  --color-gray-50: #FAFAFA;
-  --color-gray-100: #F4F4F5;
-  --color-gray-200: #E4E4E7;
-  --color-gray-300: #D4D4D8;
-  --color-gray-400: #A1A1AA;
-  --color-gray-500: #6E6E6E;
-  --color-gray-600: #52525B;
-  --color-gray-700: #3F3F46;
-  --color-gray-800: #27272A;
-  --color-gray-900: #18181B;
+  --color-default-50: #FAFAFA;
+  --color-default-100: #F4F4F5;
+  --color-default-200: #E4E4E7;
+  --color-default-300: #D4D4D8;
+  --color-default-400: #A1A1AA;
+  --color-default-500: #6E6E6E;
+  --color-default-600: #52525B;
+  --color-default-700: #3F3F46;
+  --color-default-800: #27272A;
+  --color-default-900: #18181B;
 }
 
 *{
   box-sizing: border-box;
+}
+
+
+/* Keyframes for the gradient animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Apply gradient animation for both light and dark modes */
+.bg-gradient-animated {
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* Light Mode Gradient */
+.light-mode {
+  background-image: linear-gradient(to bottom right, #E0F2FE, #7DD3FC, #38BDF8, #0EA5E9);
+}
+
+/* Dark Mode Gradient */
+.dark-mode {
+  background-image: linear-gradient(to bottom right, #1e293b, #334155, #475569, #64748b);
+}
+
+body {
+  transition: background-color 0.3s ease-in-out;
 }

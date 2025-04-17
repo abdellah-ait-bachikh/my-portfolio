@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Rubik } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import ToggleDark from "@/components/ToggleDark";
 
 const rubikSans = Rubik({
   variable: "--font-rubik-sans",
@@ -61,10 +62,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="">
       <body
-        className={`${rubikSans.variable}  antialiased bg-fixed bg-gradient-to-br from-pink-100 via-gray-100 to-green-100 min-h-screen dark:from-slate-900 dark:via-slate-800/95 dark:to-slate-800/90 text-black dark:text-white relative`}
+        className={`${rubikSans.variable}  antialiased bg-fixed bg-gradient-to-br from-gray-200 via-gray-100 to-green-100 min-h-screen dark:from-slate-900 dark:via-slate-800/95 dark:to-slate-800/90 text-black dark:text-white relative`}
       >
+        <ToggleDark/>
         <Header />
-        <main className="min-h-[200vh]">{children}</main>
+        <main className="">{children}</main>
       </body>
     </html>
   );

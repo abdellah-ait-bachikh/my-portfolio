@@ -16,6 +16,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
+    "react-simple-typewriter": "^5.0.1",
     "react-toastify": "^11.0.5",
     "react-typing-effect": "^2.0.5",
     "swiper": "^11.2.6",
@@ -26,6 +27,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-typing-effect": "^2.0.7",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
