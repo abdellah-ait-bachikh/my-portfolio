@@ -2,33 +2,34 @@
 import { useNavigationLink } from "@/context/navigationContext";
 import { navLinks } from "@/lib/constance";
 import classNames from "classnames";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useTransition } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsList } from "react-icons/bs";
 
 const NavMenu = () => {
+  const t = useTranslations("components.header.navbar");
   const [isActive, setIsActive] = useState(false);
   const { activeLink, setActiveLink } = useNavigationLink();
-  
-   // IntersectionObserver callback
-   const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+
+  // IntersectionObserver callback
+  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
       // Trigger when 50% of the element is visible in the viewport
       if (entry.isIntersecting) {
         setActiveLink("#" + entry.target.id || "");
-        window.location.hash="#" + entry.target.id || ""
-        console.log("#" + entry.target.id);  // Log the ID of the element
+        window.location.hash = "#" + entry.target.id || "";
+        console.log("#" + entry.target.id); // Log the ID of the element
       }
     });
   };
 
   useEffect(() => {
-    
     // Create an intersection observer instance
     const observer = new IntersectionObserver(handleIntersection, {
-      root: null,  // use the viewport as the root
-      threshold: 0.5,  // Trigger when 50% of the element is visible
+      root: null, // use the viewport as the root
+      threshold: 0.5, // Trigger when 50% of the element is visible
     });
 
     // Target all elements with an ID to observe
@@ -40,7 +41,7 @@ const NavMenu = () => {
       elements.forEach((element) => observer.unobserve(element));
     };
   }, []);
-  
+
   return (
     <nav className={`flex items-center font-semibold`}>
       <button
@@ -81,7 +82,7 @@ const NavMenu = () => {
             activeLink === e.href ? "before:w-full" : "before:w-0"
           }`}
           >
-            {e.label}
+            {t(e.label)}
           </Link>
         ))}
       </div>

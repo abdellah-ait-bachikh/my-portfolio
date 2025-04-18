@@ -1,3 +1,30 @@
 {
-
-}
+    "components": {
+      "header": {
+        "logo": {},
+        "navbar": {
+          "about": "À propos",
+          "skills": "Compétences",
+          "projects": "Projets",
+          "contact": "Contact"
+        }
+      },
+      "footer": {
+    "description": "Nous créons des solutions numériques innovantes et percutantes. Construisons quelque chose de génial ensemble !"
+  }
+    },
+    "pages": {
+      "home": {
+        "title": "Bonjour, je suis",
+        "name": "Abdellah Ait Bachikh",
+        "text": "Je suis un développeur Full Stack — bienvenue sur mon portfolio. Construisons quelque chose de génial ensemble !",
+        "cv_btn": "Télécharger le CV",
+        "contact_btn": "Contactez-moi"
+      },
+      "about": {},
+      "skills": {},
+      "projects": {},
+      "contact": {}
+    }
+  }
+  

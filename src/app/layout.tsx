@@ -11,6 +11,7 @@ const rubikSans = Rubik({
 });
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
+import Settings from "@/components/Settings";
 
 // const rubikMon = Rubik({
 //   variable: "--font-rubik-mono",
@@ -74,7 +75,7 @@ export default async function Layout({
         <NextIntlClientProvider>
           <NavigationContextProvider>
             <div className="fixed bottom-0 left-0 right-0 top-0 -z-10 bg-[linear-gradient(to_right,#cccccc33_1px,transparent_1px),linear-gradient(to_bottom,#cccccc33_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-            <ToggleDark />
+            <Settings />
             <Header />
             <main className="z-20">{children}</main>
             <Footer />

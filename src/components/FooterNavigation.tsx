@@ -1,9 +1,11 @@
 "use client"
 import { navLinks } from '@/lib/constance';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import React from 'react'
 
 const FooterNavigation = () => {
+  const t = useTranslations('components.header.navbar')
   return (
     <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12 font-semibold">
     {navLinks.map((e) => (
@@ -21,7 +23,7 @@ const FooterNavigation = () => {
             }
           }}
         >
-          {e.label}
+          {t(e.label)}
         </Link>
       </li>
     ))}

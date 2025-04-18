@@ -1,3 +1,29 @@
 {
-  
+  "components": {
+    "header": {
+      "logo": {},
+      "navbar": {
+        "about": "About",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact"
+      }
+    },
+    "footer": {
+      "description": "Crafting innovative and impactful digital solutions. Let's build something amazing together! "
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Hi, I'm",
+      "name": "Abdellah Ait Bachikh",
+      "text": "I'm a Full Stack Developer — welcome to my portfolio. Let's build something amazing together!",
+      "cv_btn": "Download Cv",
+      "contact_btn": "Contact me"
+    },
+    "about": {},
+    "skills": {},
+    "projects": {},
+    "contact": {}
+  }
 }

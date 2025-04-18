@@ -1,8 +1,10 @@
 import React from "react";
 import Logo from "./Logo";
 import FooterNavigation from "./FooterNavigation";
+import { getTranslations } from "next-intl/server";
 
-const Footer = () => {
+const Footer =async () => {
+  const t = await getTranslations('components.footer')
   return (
     <footer className="bg-transparent">
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
@@ -11,8 +13,7 @@ const Footer = () => {
         </div>
 
         <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-          consequuntur amet culpa cum itaque neque.
+         {t('description')}
         </p>
 
         <FooterNavigation />
