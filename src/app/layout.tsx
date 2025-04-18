@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import ToggleDark from "@/components/ToggleDark";
 import NavigationContextProvider from "@/context/navigationContext";
+import Footer from "@/components/Footer";
 
 const rubikSans = Rubik({
   variable: "--font-rubik-sans",
@@ -70,6 +71,7 @@ export default function RootLayout({
           <ToggleDark />
           <Header />
           <main className="z-20">{children}</main>
+          <Footer/>
         </NavigationContextProvider>
       </body>
     </html>

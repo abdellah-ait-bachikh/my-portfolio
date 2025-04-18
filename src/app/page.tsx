@@ -13,6 +13,7 @@ const page = () => {
       <Skills />
       <Projects />
       <Contact />
+      
     </>
   );
 };

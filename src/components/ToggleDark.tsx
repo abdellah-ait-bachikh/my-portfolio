@@ -16,13 +16,12 @@ const ToggleDark = () => {
   }, [isDark]);
   return (
     <motion.button
-    whileTap={{ scale: 0.7 }}
-    className="fixed top-[100px] right-[20px] cursor-pointer text-3xl z-20"
-    onClick={() => setIsDark((prev) => !prev)}
-  >
-    {isDark ? <GoSun /> : <FaRegMoon />}
-  </motion.button>
-  
+      whileTap={{ scale: 0.7 }}
+      className="fixed top-[100px] right-[20px]  text-3xl w-fit h-fit p-1"
+      onClick={() => setIsDark((prev) => !prev)}
+    >
+      {isDark ? <GoSun className="cursor-pointer"/> : <FaRegMoon className="cursor-pointer" />}
+    </motion.button>
   );
 };
 

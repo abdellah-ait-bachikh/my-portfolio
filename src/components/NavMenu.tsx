@@ -17,12 +17,14 @@ const NavMenu = () => {
       // Trigger when 50% of the element is visible in the viewport
       if (entry.isIntersecting) {
         setActiveLink("#" + entry.target.id || "");
+        window.location.hash="#" + entry.target.id || ""
         console.log("#" + entry.target.id);  // Log the ID of the element
       }
     });
   };
 
   useEffect(() => {
+    
     // Create an intersection observer instance
     const observer = new IntersectionObserver(handleIntersection, {
       root: null,  // use the viewport as the root
