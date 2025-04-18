@@ -5,6 +5,7 @@ import Skills from "./_pages/Skills";
 import Projects from "./_pages/Projects";
 import Contact from "./_pages/Contact";
 
+
 const page = () => {
   return (
     <>

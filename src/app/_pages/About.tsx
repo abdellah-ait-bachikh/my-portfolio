@@ -1,10 +1,11 @@
-import Card from "@/components/Card";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import React from "react";
 
-const About = () => {
+const About = async () => {
   return (
-    <div className="h-screen conatiner flex items-center mt-1 " id="about">
+    <div className="h-screen conatiner  mt-1 " id="about">
       About
+      <LanguageSwitcher />
     </div>
   );
 };
