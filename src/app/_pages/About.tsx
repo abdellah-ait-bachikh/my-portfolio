@@ -3,8 +3,8 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div className='h-[200vh] conatiner flex items-center'>
-        <Card/>
+    <div className='h-screen conatiner flex items-center mt-1 backdrop-blur-sm ' id='about'>
+       About
     </div>
   )
 }
