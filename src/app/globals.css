@@ -92,35 +92,4 @@
 }
 
 
-/* Keyframes for the gradient animation */
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
 
-/* Apply gradient animation for both light and dark modes */
-.bg-gradient-animated {
-  background-size: 400% 400%;
-  animation: gradientShift 8s ease infinite;
-}
-
-/* Light Mode Gradient */
-.light-mode {
-  background-image: linear-gradient(to bottom right, #E0F2FE, #7DD3FC, #38BDF8, #0EA5E9);
-}
-
-/* Dark Mode Gradient */
-.dark-mode {
-  background-image: linear-gradient(to bottom right, #1e293b, #334155, #475569, #64748b);
-}
-
-body {
-  transition: background-color 0.3s ease-in-out;
-}

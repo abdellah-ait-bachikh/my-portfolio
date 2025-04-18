@@ -17,7 +17,7 @@ const ToggleDark = () => {
   return (
     <motion.button
     whileTap={{ scale: 0.7 }}
-    className="fixed top-[100px] right-[20px] cursor-pointer text-3xl"
+    className="fixed top-[100px] right-[20px] cursor-pointer text-3xl z-20"
     onClick={() => setIsDark((prev) => !prev)}
   >
     {isDark ? <GoSun /> : <FaRegMoon />}

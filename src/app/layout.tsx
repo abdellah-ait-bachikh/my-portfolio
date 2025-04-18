@@ -62,11 +62,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="">
       <body
-        className={`${rubikSans.variable}  antialiased bg-fixed bg-gradient-to-br from-gray-200 via-gray-100 to-green-100 min-h-screen dark:from-slate-900 dark:via-slate-800/95 dark:to-slate-800/90 text-black dark:text-white relative`}
+        className={`${rubikSans.variable}  antialiased bg-fixed dark:bg-slate-950 relative text-black dark:text-white`}
       >
-        <ToggleDark/>
+<div className="fixed bottom-0 left-0 right-0 top-0 -z-10 bg-[linear-gradient(to_right,#cccccc33_1px,transparent_1px),linear-gradient(to_bottom,#cccccc33_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+<ToggleDark />
         <Header />
-        <main className="">{children}</main>
+        <main className="z-20">{children}</main>
       </body>
     </html>
   );

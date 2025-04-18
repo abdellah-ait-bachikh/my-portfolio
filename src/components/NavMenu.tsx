@@ -17,7 +17,7 @@ const NavMenu = () => {
       </button>
       <div
         className={classNames(
-          `fixed md:static left-0 right-0 top-20 flex flex-col bg-white/70 dark:bg-slate-800/80  shadow-sm   
+          `fixed md:static left-0 right-0 top-20 flex flex-col bg-white/70 dark:bg-slate-800/80 dark:md:bg-transparent  shadow-sm   
             md:top-0 md:flex-row md:h-fit md:items-center md:bg-transparent md:gap-1 md:backdrop-blur-none md:shadow-none overflow-hidden md:overflow-visible  transition-[height] duration-300 ease-in-out`,
           {
             "h-[224px] md:h-fit": isActive,
