@@ -1,30 +1,33 @@
 {
-    "components": {
-      "header": {
-        "logo": {},
-        "navbar": {
-          "about": "À propos",
-          "skills": "Compétences",
-          "projects": "Projets",
-          "contact": "Contact"
-        }
-      },
-      "footer": {
-    "description": "Nous créons des solutions numériques innovantes et percutantes. Construisons quelque chose de génial ensemble !"
-  }
+  "components": {
+    "header": {
+      "logo": {},
+      "navbar": {
+        "about": "À propos",
+        "skills": "Compétences",
+        "projects": "Projets",
+        "contact": "Contact"
+      }
     },
-    "pages": {
-      "home": {
-        "title": "Bonjour, je suis",
-        "name": "Abdellah Ait Bachikh",
-        "text": "Je suis un développeur Full Stack — bienvenue sur mon portfolio. Construisons quelque chose de génial ensemble !",
-        "cv_btn": "Télécharger le CV",
-        "contact_btn": "Contactez-moi"
-      },
-      "about": {},
-      "skills": {},
-      "projects": {},
-      "contact": {}
+    "footer": {
+      "description": "Nous créons des solutions numériques innovantes et percutantes. Construisons quelque chose de génial ensemble !"
     }
+  },
+  "pages": {
+    "home": {
+      "title": "Bonjour, je suis",
+      "name": "Abdellah Ait Bachikh",
+      "text": "Je suis un développeur Full Stack — bienvenue sur mon portfolio. Construisons quelque chose de génial ensemble !",
+      "cv_btn": "Télécharger le CV",
+      "contact_btn": "Contactez-moi"
+    },
+    "about": {
+      "title":"À propos",
+
+      "description": "Je suis un développeur Full Stack passionné du Maroc avec 2 ans d'expérience professionnelle en développement web. En 2024, j'ai fièrement obtenu mon diplôme en développement Full Stack avec une note élevée de 17.74/20. Depuis lors, je travaille en tant que freelance, collaborant sur divers projets professionnels avec des clients et des équipes. Ce parcours m'a permis d'affiner mes compétences, de relever des défis réels et de livrer des applications de haute qualité, efficaces et conviviales. Je suis toujours désireux d'apprendre, de grandir et de créer des solutions innovantes qui font la différence."
+    },
+    "skills": {},
+    "projects": {},
+    "contact": {}
   }
-  
+}

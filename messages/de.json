@@ -1,29 +1,33 @@
 {
-    "components": {
-      "header": {
-        "logo": {},
-        "navbar": {
-          "about": "Über",
-          "skills": "Fähigkeiten",
-          "projects": "Projekte",
-          "contact": "Kontakt"
-        }
-      },"footer": {
-        "description": "Wir entwickeln innovative und wirkungsvolle digitale Lösungen. Lass uns zusammen etwas Großartiges schaffen!"
+  "components": {
+    "header": {
+      "logo": {},
+      "navbar": {
+        "about": "Über",
+        "skills": "Fähigkeiten",
+        "projects": "Projekte",
+        "contact": "Kontakt"
       }
     },
-    "pages": {
-      "home": {
-        "title": "Hallo, ich bin",
-        "name": "Abdellah Ait Bachikh",
-        "text": "Ich bin ein Full Stack Entwickler — willkommen auf meinem Portfolio. Lass uns zusammen etwas Großartiges schaffen!",
-        "cv_btn": "herunterladen",
-        "contact_btn": "Kontaktiere mich"
-      },
-      "about": {},
-      "skills": {},
-      "projects": {},
-      "contact": {}
+    "footer": {
+      "description": "Wir entwickeln innovative und wirkungsvolle digitale Lösungen. Lass uns zusammen etwas Großartiges schaffen!"
     }
+  },
+  "pages": {
+    "home": {
+      "title": "Hallo, ich bin",
+      "name": "Abdellah Ait Bachikh",
+      "text": "Ich bin ein Full Stack Entwickler — willkommen auf meinem Portfolio. Lass uns zusammen etwas Großartiges schaffen!",
+      "cv_btn": "herunterladen",
+      "contact_btn": "Kontaktiere mich"
+    },
+    "about": {
+      "title": "Über",
+
+      "description": "Ich bin ein leidenschaftlicher Full Stack Developer aus Marokko mit 2 Jahren professioneller Erfahrung in der Webentwicklung. 2024 habe ich stolz mein Diplom in Full Stack Development mit einer starken Note von 17,74/20 erhalten. Seitdem arbeite ich als Freelancer und arbeite mit Kunden und Teams an verschiedenen professionellen Projekten. Diese Reise hat mir geholfen, meine Fähigkeiten zu schärfen, reale Herausforderungen zu meistern und qualitativ hochwertige, effiziente und benutzerfreundliche Anwendungen zu liefern. Ich bin stets bestrebt zu lernen, mich weiterzuentwickeln und innovative Lösungen zu schaffen, die einen Unterschied machen."
+    },
+    "skills": {},
+    "projects": {},
+    "contact": {}
   }
-  
+}
