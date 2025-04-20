@@ -6,13 +6,13 @@ import Link from "next/link";
 import { FaPencilAlt } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 const ConcertOne = Concert_One({
-  subsets: ["latin"], // required
-  weight: ["400"], // optional — choose weights you need
-  display: "swap", // optional, better font loading
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
 });
 const Logo = () => {
   const { setActiveLink } = useNavigationLink();
-  const t = useTranslations('components.header')
+  const t = useTranslations("components.header");
   return (
     <Link
       href="/"
@@ -25,9 +25,20 @@ const Logo = () => {
           behavior: "smooth",
         });
       }}
+      dir="ltr"
     >
       {" "}
-      <span className={` ${ConcertOne.className}`}>{t('logo')}</span>{" "}
+      <span
+        className={` ${ConcertOne.className}`}
+        style={{
+          textShadow: `
+ 
+  0 0 20px rgba(13,148,136,0.4)
+`,
+        }}
+      >
+        {t("logo")}
+      </span>{" "}
       <FaPencilAlt />
     </Link>
   );

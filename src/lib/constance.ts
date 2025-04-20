@@ -63,5 +63,11 @@ export const skills = [
     image: "/images/skills/mongodb.png",
     date: "2022-09-04",
   },
+  {
+    id: 14,
+    label: "ElectroneJs.png",
+    image: "/images/skills/ElectroneJs.png",
+    date: "2022-09-04",
+  },
   { id: 14, label: "git", image: "/images/skills/git.png", date: "2023-09-04" },
 ] as const;

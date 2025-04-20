@@ -13,7 +13,9 @@ const NavMenu = () => {
   const t = useTranslations("components.header.navbar");
   const [isActive, setIsActive] = useState(false);
   const { activeLink, setActiveLink } = useNavigationLink();
-  const ref = useClickOutSide(()=>{setIsActive(false)})
+  const ref = useClickOutSide(() => {
+    setIsActive(false);
+  });
   // IntersectionObserver callback
   const handleIntersection = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
@@ -42,9 +44,7 @@ const NavMenu = () => {
       elements.forEach((element) => observer.unobserve(element));
     };
   }, []);
-useEffect(()=>{
-
-},[])
+  useEffect(() => {}, []);
   return (
     <nav className={`flex items-center font-semibold`} ref={ref}>
       <button
@@ -77,15 +77,25 @@ useEffect(()=>{
 
               setActiveLink(e.href);
             }}
-            className={`p-3 text-2xl md:text-lg relative 
+            className={`p-3 text-2xl md:text-lg relative  
           before:content-[''] before:absolute before:left-0 before:bottom-0
           before:h-[2px] before:w-0 before:bg-black dark:before:bg-white before:rounded-xl
           before:transition-all before:duration-300 before:ease-in-out
-          hover:before:w-full ${
+          hover:before:w-full  ${
             activeLink === e.href ? "before:w-full" : "before:w-0"
           }`}
           >
-            {t(e.label)}
+            <span
+              style={{
+                textShadow: `
+      0 0 4px rgba(13,148,136,0.6),
+      0 0 20px rgba(13,148,136,0.4)
+    `,
+              }}
+            >
+              {" "}
+              {t(e.label)}
+            </span>
           </Link>
         ))}
       </div>
