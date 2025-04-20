@@ -1,11 +1,11 @@
 "use client";
 import { getDateDifference, getYear } from "@/lib/utils";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { useTranslations } from "next-intl";
-import { useInView } from "framer-motion";
+import { useAnimation, useInView } from "framer-motion";
 import { motion } from "framer-motion";
 const Card = ({
   img,
@@ -17,19 +17,85 @@ const Card = ({
   date: string;
 }) => {
   const t = useTranslations("pages.skills.card");
-  const cardRef = useRef(null);
-  const isInView = useInView(cardRef, { margin: "-100px", once: false });
+  const cardRef = useRef<HTMLDivElement>(null);
+  const controls = useAnimation();
+  const [isVisible, setIsVisible] = useState(false);
 
-  return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, y: 50, scale: 0.5 }}
-      animate={
-        isInView
-          ? { opacity: 1, y: 0, scale: 1 }
-          : { opacity: 0, y: 50, scale: 0.5 }
+  // Debounced visibility state
+  const scrollTimeout = useRef<NodeJS.Timeout | undefined>(undefined);
+
+  // Use IntersectionObserver as the primary detection method
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !isVisible) {
+            setIsVisible(true);
+            controls.start({ opacity: 1, y: 0, scale: 1 });
+          } else if (!entry.isIntersecting && isVisible) {
+            setIsVisible(false);
+            controls.start({ opacity: 0, y: 50, scale: 0.1 });
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1, // Trigger when 10% of element is visible
       }
-      transition={{ duration: 0.7, ease: "easeInOut" }}
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, [controls, isVisible]);
+
+  // Fallback scroll handler for fast scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+
+      // Set a new timeout to check visibility after scroll stops
+      scrollTimeout.current = setTimeout(() => {
+        if (!cardRef.current) return;
+
+        const rect = cardRef.current.getBoundingClientRect();
+        const isInView =
+          rect.top < window.innerHeight * 0.8 && rect.bottom > window.innerHeight * 0.1;
+
+        if (isInView && !isVisible) {
+          setIsVisible(true);
+          controls.start({ opacity: 1, scale: 1 });
+        } else if (!isInView && isVisible) {
+          setIsVisible(false);
+          controls.start({ opacity: 0, scale: 0.1 });
+        }
+      }, 100); // Adjust this delay as needed
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+    };
+  }, [controls, isVisible]);
+
+  return ( 
+    <motion.div
+    ref={cardRef}
+    initial={{ opacity: 0, scale: 0.1 }}
+    animate={controls}
+    transition={{ duration: 0.7, ease: "easeInOut" }}
     >
       <StyledWrapper>
         <div className="card">
@@ -56,7 +122,7 @@ const Card = ({
                 <div className="description">
                   <div className="title">
                     <p className="title">
-                      <strong  dir="ltr">2 {t("description")}</strong>
+                      <strong dir="ltr">2 {t("description")}</strong>
                     </p>
                     <IoMdCheckmarkCircleOutline size={18} />
                   </div>
@@ -188,7 +254,7 @@ const StyledWrapper = styled.div`
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background-color: oklch(91% 0.096 180.426);
+    background-color: oklch(95.3% 0.051 180.801);
     position: relative;
     filter: blur(15px);
     animation: floating 2600ms infinite linear;
