@@ -1,8 +1,6 @@
+import AcountsSection from "@/components/AcountsSection";
 import { getTranslations } from "next-intl/server";
 import { TbUserSquareRounded } from "react-icons/tb";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { MdAlternateEmail } from "react-icons/md";
 
 const About = async () => {
   const t = await getTranslations("pages.about");
@@ -14,17 +12,7 @@ const About = async () => {
         {/* Image Section */}
         <div className="flex justify-center flex-col items-center">
           <TbUserSquareRounded size={300} />
-          <div className="flex items-center justify-center gap-6 ">
-            <span>
-              <FaGithub size={30} />
-            </span>
-            <span>
-              <FaLinkedin size={30} />
-            </span>
-            <span>
-              <MdAlternateEmail size={30} />
-            </span>
-          </div>
+          <AcountsSection/>
         </div>
         {/* Text Section */}
         <div className="space-y-6 text-gray-800 dark:text-gray-200">
