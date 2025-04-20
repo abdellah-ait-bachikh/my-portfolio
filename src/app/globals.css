@@ -91,5 +91,12 @@
   box-sizing: border-box;
 }
 
+div.vertical-timeline-element-content{
+  @apply bg-teal-200 dark:bg-slate-800 ;
+}
+div.vertical-timeline-element-content-arrow{
+ opacity: 0;
+}
+
 
 

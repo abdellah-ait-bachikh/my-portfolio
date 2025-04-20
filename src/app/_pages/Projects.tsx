@@ -15,24 +15,28 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import { LuLayoutDashboard } from "react-icons/lu";
+import { GrLanguage } from "react-icons/gr";
+import { IoMdChatboxes } from "react-icons/io";
+import { BsShop } from "react-icons/bs";
 
 const Projects = () => {
   const t = useTranslations("pages.projects");
   return (
     <section id="projects" className="min-h-screen mt-1 ">
-      <h1 className="underline underline-offset-4 text-4xl font-bold text-center">
+      <h1 className=" text-4xl font-bold text-center">
         {t("title")}
       </h1>
       <div dir="ltr" className="mt-6">
         <VerticalTimeline>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work dark:text-black "
-            contentStyle={{borderRadius:18 }}
+            className="vertical-timeline-element--work  "
+            contentStyle={{borderRadius:18,}}
             textClassName="dark:bg-slate-800"
-            contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-            date="2011 - present"
-            iconClassName="bg-blue-500 text-white rounded-full"
-            icon={<FaUbuntu />}
+            date="20 days"
+            
+            iconClassName="bg-teal-400/70 dark:bg-slate-800 text-white rounded-full"
+            icon={<LuLayoutDashboard />}
           >
             <h3 className="vertical-timeline-element-title text-xl font-bold">
               Creative Director
@@ -46,12 +50,12 @@ const Projects = () => {
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work dark:text-black"
-            date="2010 - 2011"
+            className="vertical-timeline-element--work "
+            date="15 days"
                         contentStyle={{ borderRadius:18 }}
 
-            iconClassName="bg-blue-500 text-white rounded-full"
-            icon={<FaAdn />}
+            iconClassName="bg-teal-400/70 dark:bg-slate-800 text-white rounded-full"
+            icon={<GrLanguage />}
           >
             <h3 className="vertical-timeline-element-title text-xl font-bold">
               Art Director
@@ -65,12 +69,12 @@ const Projects = () => {
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work dark:text-black"
-            date="2008 - 2010"
+            className="vertical-timeline-element--work "
+            date="13 days"
             contentStyle={{borderRadius:18 }}
 
-            iconClassName="bg-blue-500 text-white rounded-full"
-            icon={<FaBaby />}
+            iconClassName="bg-teal-400/70 dark:bg-slate-800 text-white rounded-full"
+            icon={<BsShop />}
           >
             <h3 className="vertical-timeline-element-title text-xl font-bold">
               Web Designer
@@ -81,14 +85,14 @@ const Projects = () => {
             <p className="text-base">User Experience, Visual Design</p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--work dark:text-black"
-            date="2006 - 2008"
+            className="vertical-timeline-element--work "
+            date="28 days"
             contentStyle={{borderRadius:18 }}
 
-            iconClassName="bg-blue-500 text-white rounded-full"
-            icon={<FaAd />}
+            iconClassName="bg-teal-400/70 dark:bg-slate-800 text-white rounded-full"
+            icon={<IoMdChatboxes />}
           >
-            <h3 className="vertical-timeline-element-title text-xl font-bold">
+            <h3 className="vertical-timeline-element-title text-xl font-bold ">
               Web Designer
             </h3>
             <h4 className="vertical-timeline-element-subtitle text-lg">
@@ -97,7 +101,7 @@ const Projects = () => {
             <p className="text-base">User Experience, Visual Design</p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--education dark:text-black"
+            className="vertical-timeline-element--education "
             date="April 2013"
             contentStyle={{borderRadius:18 }}
 
@@ -113,8 +117,8 @@ const Projects = () => {
             <p className="text-base">Strategy, Social Media</p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--education dark:text-black"
-            date="November 2012"
+            className="vertical-timeline-element--education "
+            date="11 days"
             contentStyle={{borderRadius:18 }}
 
             iconClassName="bg-pink-500 text-white rounded-full"
@@ -131,8 +135,8 @@ const Projects = () => {
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            className="vertical-timeline-element--education dark:text-black"
-            date="2002 - 2006"
+            className="vertical-timeline-element--education "
+            date="8 days"
             contentStyle={{borderRadius:18 }}
 
             iconClassName="bg-pink-500 text-white rounded-full"
