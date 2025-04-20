@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { TbUserSquareRounded } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa";
@@ -9,10 +8,7 @@ const About = async () => {
   const t = await getTranslations("pages.about");
 
   return (
-    <section
-      className=" w-full flex items-center justify-center "
-      id="about"
-    >
+    <section className=" w-full flex items-center justify-center " id="about">
       <div className="container grid grid-cols-1 md:grid-cols-2 items-center gap-12 px-6 py-12">
         {" "}
         {/* Image Section */}
