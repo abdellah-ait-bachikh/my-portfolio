@@ -1,7 +1,7 @@
 {
   "components": {
     "header": {
-      "logo": {},
+      "logo": "Abdellah.Code",
       "navbar": {
         "about": "About",
         "skills": "Skills",

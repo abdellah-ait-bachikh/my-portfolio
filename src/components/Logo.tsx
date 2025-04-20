@@ -4,6 +4,7 @@ import React from "react";
 import { Concert_One } from "next/font/google";
 import Link from "next/link";
 import { FaPencilAlt } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 const ConcertOne = Concert_One({
   subsets: ["latin"], // required
   weight: ["400"], // optional — choose weights you need
@@ -11,7 +12,7 @@ const ConcertOne = Concert_One({
 });
 const Logo = () => {
   const { setActiveLink } = useNavigationLink();
-
+  const t = useTranslations('components.header')
   return (
     <Link
       href="/"
@@ -26,7 +27,7 @@ const Logo = () => {
       }}
     >
       {" "}
-      <span className={` ${ConcertOne.className}`}>AbdellahDev</span>{" "}
+      <span className={` ${ConcertOne.className}`}>{t('logo')}</span>{" "}
       <FaPencilAlt />
     </Link>
   );

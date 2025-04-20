@@ -1,14 +1,14 @@
 "use client";
-import { IoLanguage } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { setCookie } from "cookies-next";
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({setIsOpen}:{setIsOpen:(prev:boolean)=>void}) {
   const router = useRouter();
 
   const switchLanguage = (locale: string) => {
     setCookie("NEXT_LOCALE", locale);
+    setIsOpen(false)
     router.refresh();
   };
 

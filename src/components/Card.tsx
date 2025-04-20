@@ -1,11 +1,11 @@
 "use client";
-import { getDateDifference, getYear } from "@/lib/utils";
+import {  getYear } from "@/lib/utils";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { useTranslations } from "next-intl";
-import { useAnimation, useInView } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import { motion } from "framer-motion";
 const Card = ({
   img,
@@ -21,10 +21,8 @@ const Card = ({
   const controls = useAnimation();
   const [isVisible, setIsVisible] = useState(false);
 
-  // Debounced visibility state
   const scrollTimeout = useRef<NodeJS.Timeout | undefined>(undefined);
 
-  // Use IntersectionObserver as the primary detection method
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -41,7 +39,7 @@ const Card = ({
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0.1, // Trigger when 10% of element is visible
+        threshold: 0.1, 
       }
     );
 
@@ -56,14 +54,12 @@ const Card = ({
     };
   }, [controls, isVisible]);
 
-  // Fallback scroll handler for fast scrolling
   useEffect(() => {
     const handleScroll = () => {
       if (scrollTimeout.current) {
         clearTimeout(scrollTimeout.current);
       }
 
-      // Set a new timeout to check visibility after scroll stops
       scrollTimeout.current = setTimeout(() => {
         if (!cardRef.current) return;
 
@@ -78,7 +74,7 @@ const Card = ({
           setIsVisible(false);
           controls.start({ opacity: 0, scale: 0.1 });
         }
-      }, 100); // Adjust this delay as needed
+      }, 100); 
     };
 
     window.addEventListener("scroll", handleScroll);

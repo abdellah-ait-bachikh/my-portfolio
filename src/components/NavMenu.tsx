@@ -1,10 +1,11 @@
 "use client";
 import { useNavigationLink } from "@/context/navigationContext";
+import useClickOutSide from "@/hooks/useClickOutSIde";
 import { navLinks } from "@/lib/constance";
 import classNames from "classnames";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import React, { useEffect, useState, useTransition } from "react";
+import React, { useEffect, useRef, useState, useTransition } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsList } from "react-icons/bs";
 
@@ -12,7 +13,7 @@ const NavMenu = () => {
   const t = useTranslations("components.header.navbar");
   const [isActive, setIsActive] = useState(false);
   const { activeLink, setActiveLink } = useNavigationLink();
-
+  const ref = useClickOutSide(()=>{setIsActive(false)})
   // IntersectionObserver callback
   const handleIntersection = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
@@ -41,9 +42,11 @@ const NavMenu = () => {
       elements.forEach((element) => observer.unobserve(element));
     };
   }, []);
+useEffect(()=>{
 
+},[])
   return (
-    <nav className={`flex items-center font-semibold`}>
+    <nav className={`flex items-center font-semibold`} ref={ref}>
       <button
         className="cursor-pointer md:hidden"
         onClick={() => setIsActive((prev) => !prev)}
