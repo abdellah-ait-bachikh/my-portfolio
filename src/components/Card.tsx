@@ -1,51 +1,72 @@
 "use client";
+import { getDateDifference, getYear } from "@/lib/utils";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { useTranslations } from "next-intl";
+import { useInView } from "framer-motion";
+import { motion } from "framer-motion";
+const Card = ({
+  img,
+  label,
+  date,
+}: {
+  img: string;
+  label: string;
+  date: string;
+}) => {
+  const t = useTranslations("pages.skills.card");
+  const cardRef = useRef(null);
+  const isInView = useInView(cardRef, { margin: "-100px", once: false });
 
-const Card = ({ img, label,year }: { img: string; label: string,year:string }) => {
   return (
-    <StyledWrapper>
-      <div className="card">
-        <div className="content">
-          <div className="back   bg-white/10 rounded-4xl ">
-            <div className="back-content bg-transparent  rounded-3xl p-3">
-            <Image
-              className="rounded-2xl"
-              src={img}
-              width={300}
-              height={300}
-              alt={label}
-            />
+    <motion.div
+      ref={cardRef}
+      initial={{ opacity: 0, y: 50, scale: 0.5 }}
+      animate={
+        isInView
+          ? { opacity: 1, y: 0, scale: 1 }
+          : { opacity: 0, y: 50, scale: 0.5 }
+      }
+      transition={{ duration: 0.7, ease: "easeInOut" }}
+    >
+      <StyledWrapper>
+        <div className="card">
+          <div className="content">
+            <div className="back   bg-white/10 rounded-4xl ">
+              <div className="back-content bg-transparent  rounded-3xl p-3">
+                <Image
+                  className="rounded-2xl"
+                  src={img}
+                  width={300}
+                  height={300}
+                  alt={label}
+                />
+              </div>
             </div>
-          </div>
-          <div className="front ">
-          <div className="img">
-              <div className="circle">
+            <div className="front ">
+              <div className="img">
+                <div className="circle"></div>
+                <div className="circle" id="right"></div>
+                <div className="circle" id="bottom"></div>
               </div>
-              <div className="circle" id="right">
-              </div>
-              <div className="circle" id="bottom">
-              </div>
-            </div>
-            <div className="front-content  border-2 border-slate-600/50">
-              <small className="badge">{year}</small>
-              <div className="description">
-                <div className="title">
-                  <p className="title">
-                    <strong>Spaguetti Bolognese</strong>
-                  </p>
-                  <svg fillRule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style={{mixBlendMode: 'normal'}} textAnchor="none" fontSize="none" fontWeight="none" fontFamily="none" strokeDashoffset={0}  strokeMiterlimit={10} strokeLinejoin="miter" strokeLinecap="butt" strokeWidth={1} stroke="none" fillRule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z" /></g></g></svg>
+              <div className="front-content  border border-slate-600/30">
+                <small className="badge">{getYear(date)}</small>
+                <div className="description">
+                  <div className="title">
+                    <p className="title">
+                      <strong  dir="ltr">2 {t("description")}</strong>
+                    </p>
+                    <IoMdCheckmarkCircleOutline size={18} />
+                  </div>
                 </div>
-                <p className="card-footer">
-                  30 Mins &nbsp; | &nbsp; 1 Serving
-                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </StyledWrapper>
+      </StyledWrapper>{" "}
+    </motion.div>
   );
 };
 
@@ -61,7 +82,6 @@ const StyledWrapper = styled.div`
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 300ms;
-   
   }
 
   .front,
@@ -123,7 +143,7 @@ const StyledWrapper = styled.div`
     padding: 10px;
     display: flex;
     flex-direction: column;
-        border-radius: 14px;
+    border-radius: 14px;
 
     justify-content: space-between;
   }
@@ -154,12 +174,6 @@ const StyledWrapper = styled.div`
 
   .title p {
     width: 50%;
-  }
-
-  .card-footer {
-    color: #ffffff88;
-    margin-top: 5px;
-    font-size: 8px;
   }
 
   .front .img {

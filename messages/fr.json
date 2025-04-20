@@ -26,7 +26,12 @@
 
       "description": "Je suis un développeur Full Stack passionné du Maroc avec 2 ans d'expérience professionnelle en développement web. En 2024, j'ai fièrement obtenu mon diplôme en développement Full Stack avec une note élevée de 17.74/20. Depuis lors, je travaille en tant que freelance, collaborant sur divers projets professionnels avec des clients et des équipes. Ce parcours m'a permis d'affiner mes compétences, de relever des défis réels et de livrer des applications de haute qualité, efficaces et conviviales. Je suis toujours désireux d'apprendre, de grandir et de créer des solutions innovantes qui font la différence."
     },
-    "skills": {},
+    "skills": {
+      "title": "Compétences",
+      "card": {
+        "description": "Projets"
+      }
+    },
     "projects": {},
     "contact": {}
   }
