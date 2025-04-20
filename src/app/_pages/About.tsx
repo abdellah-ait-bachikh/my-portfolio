@@ -6,8 +6,8 @@ const About = async () => {
   const t = await getTranslations("pages.about");
 
   return (
-    <section className=" w-full flex items-center justify-center " id="about">
-      <div className="container grid grid-cols-1 md:grid-cols-2 items-center gap-12 px-6 py-12">
+    <section className=" w-full flex items-center justify-center min-h-[60vh]" id="about">
+      <div className="container grid grid-cols-1 md:grid-cols-2 items-center gap-12 ">
         {" "}
         <div className="flex justify-center flex-col items-center">
           <TbUserSquareRounded size={300} />

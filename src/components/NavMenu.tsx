@@ -16,35 +16,33 @@ const NavMenu = () => {
   const ref = useClickOutSide(() => {
     setIsActive(false);
   });
-  // IntersectionObserver callback
-  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-    entries.forEach((entry) => {
-      // Trigger when 50% of the element is visible in the viewport
-      if (entry.isIntersecting) {
-        setActiveLink("#" + entry.target.id || "");
-        window.location.hash = "#" + entry.target.id || "";
-        console.log("#" + entry.target.id); // Log the ID of the element
-      }
-    });
-  };
 
   useEffect(() => {
-    // Create an intersection observer instance
-    const observer = new IntersectionObserver(handleIntersection, {
-      root: null, // use the viewport as the root
-      threshold: 0.5, // Trigger when 50% of the element is visible
-    });
-
-    // Target all elements with an ID to observe
-    const elements = document.querySelectorAll("[id]");
-    elements.forEach((element) => observer.observe(element));
-
-    // Cleanup observer when component unmounts
-    return () => {
-      elements.forEach((element) => observer.unobserve(element));
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section[id]");
+      let currentSection = "";
+  
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          currentSection = "#" + section.id;
+        }
+      });
+  
+      if (currentSection !== activeLink) {
+        setActiveLink(currentSection);
+        window.history.replaceState(null, "", currentSection);
+      }
     };
-  }, []);
-  useEffect(() => {}, []);
+  
+    window.addEventListener("scroll", handleScroll, { passive: true });
+  
+    // Trigger initially in case the user refreshes mid-page
+    handleScroll();
+  
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [activeLink, setActiveLink]);
+  
   return (
     <nav className={`flex items-center font-semibold`} ref={ref}>
       <button

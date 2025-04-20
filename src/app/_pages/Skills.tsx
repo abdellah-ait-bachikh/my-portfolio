@@ -6,7 +6,7 @@ import React from "react";
 const Skills = async () => {
   const t = await getTranslations("pages.skills");
   return (
-    <div
+    <section
       id="skills"
       className="min-h-screen  flex items-center justify-center mt-4"
     >
@@ -21,7 +21,7 @@ const Skills = async () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
