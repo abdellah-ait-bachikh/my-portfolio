@@ -22,10 +22,9 @@ const AcountsSection = () => {
           rel="noopener noreferrer"
           className="flex p-3 rounded-full hover:bg-teal-100  cursor-pointer hover:shadow-[0_0_20px_5px_rgba(13,148,136,0.4)] dark:hover:shadow-[0_0_20px_5px_rgba(94,234,212,0.6)] hover:dark:text-black"
         >
-          <FaLinkedin size={30} />{" "}
+          <FaLinkedin size={30} />
         </a>
       </motion.span>
- 
     </div>
   );
 };

@@ -32,7 +32,7 @@
         "description": "المشاريع"
       }
     },
-    "projects": {},
+    "projects": { "title": "المشاريع" },
     "contact": {}
   }
 }

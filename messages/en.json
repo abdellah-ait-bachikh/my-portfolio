@@ -22,16 +22,18 @@
       "contact_btn": "Contact me"
     },
     "about": {
-      "title":"About",
+      "title": "About",
       "description": "I'm a passionate Full Stack Developer from Morocco with 2 years of professional experience in web development. In 2024, I proudly earned my diploma in Full Stack Development with a strong score of 17.74/20. Since then, I’ve been working as a freelancer, collaborating on various professional projects with clients and teams. This journey has allowed me to sharpen my skills, tackle real-world challenges, and deliver high-quality, efficient, and user-friendly applications. I’m always eager to learn, grow, and build innovative solutions that make a difference."
     },
     "skills": {
-    "title": "Skills",
-    "card": {
-      "description": "Projects"
-    }
-  },
-    "projects": {},
+      "title": "Skills",
+      "card": {
+        "description": "Projects"
+      }
+    },
+    "projects": {
+      "title": "Projects"
+    },
     "contact": {}
   }
 }

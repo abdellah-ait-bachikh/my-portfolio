@@ -32,7 +32,7 @@
         "description": "Projekte"
       }
     },
-    "projects": {},
+    "projects": {   "title": "Projekte"},
     "contact": {}
   }
 }
