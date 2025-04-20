@@ -1,9 +1,7 @@
 "use client";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import { MdAlternateEmail } from "react-icons/md";
 import { motion } from "framer-motion";
-import Link from "next/link";
 const AcountsSection = () => {
   return (
     <div className="flex items-center justify-center gap-6 ">
