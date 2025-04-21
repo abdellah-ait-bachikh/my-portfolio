@@ -17,7 +17,7 @@ const Settings = () => {
 
   return (
     <span
-      className="fixed top-[100px] ltr:right-[20px] rtl:left-[20px]"
+      className="fixed top-[100px] ltr:right-[20px] rtl:left-[20px] z-40"
       ref={ref}
     >
       <div className="relative">

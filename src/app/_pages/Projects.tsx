@@ -19,6 +19,7 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { GrLanguage } from "react-icons/gr";
 import { IoMdChatboxes } from "react-icons/io";
 import { BsShop } from "react-icons/bs";
+import Image from "next/image";
 
 const Projects = () => {
   const t = useTranslations("pages.projects");
@@ -44,12 +45,15 @@ const Projects = () => {
             <h4 className="vertical-timeline-element-subtitle text-lg">
               Miami, FL
             </h4>
+            <div className="w-full">
+              <Image alt="project-1" src='/images/projects/project-1.png' className="w-full" width={100} height={100} />
+            </div>
             <p className="text-base">
               Creative Direction, User Experience, Visual Design, Project
               Management, Team Leading
             </p>
           </VerticalTimelineElement>
-          <VerticalTimelineElement
+          {/* <VerticalTimelineElement
             className="vertical-timeline-element--work "
             date="15 days"
                         contentStyle={{ borderRadius:18 }}
@@ -148,8 +152,8 @@ const Projects = () => {
             <h4 className="vertical-timeline-element-subtitle text-lg">
               Bachelor Degree
             </h4>
-            <p className="text-base">Creative Direction, Visual Design</p>
-          </VerticalTimelineElement>
+            <p className="text-base">Creative Direction, Visual Design</p> 
+          </VerticalTimelineElement>*/}
           <VerticalTimelineElement
             iconClassName="bg-green-500 text-white rounded-full"
             icon={<FaStar />}
