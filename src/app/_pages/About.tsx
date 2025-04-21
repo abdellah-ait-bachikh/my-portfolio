@@ -7,10 +7,10 @@ const About = async () => {
 
   return (
     <section
-      className=" w-full flex items-center justify-center min-h-[60vh]"
+      className=" w-full flex items-center justify-center min-h-[60vh]  "
       id="about"
     >
-      <div className="container grid grid-cols-1 md:grid-cols-2 items-center gap-12 ">
+      <div className="container grid grid-cols-1 md:grid-cols-2 items-center gap-12 px-4git sm:px-10">
         <div className="flex justify-center flex-col items-center">
           <TbUserSquareRounded size={300} />
           <AcountsSection />

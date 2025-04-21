@@ -92,7 +92,7 @@
 }
 
 div.vertical-timeline-element-content {
-  @apply bg-teal-200 dark:bg-slate-800;
+  @apply bg-success-200 dark:bg-slate-800;
   animation: none !important;
   transform: none !important;
   opacity: 1 !important;

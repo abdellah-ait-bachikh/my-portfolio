@@ -24,7 +24,7 @@ import Image from "next/image";
 const Projects = () => {
   const t = useTranslations("pages.projects");
   return (
-    <section id="projects" className="mt-1 ">
+    <section id="projects" className="">
       <h1 className=" text-4xl font-bold text-center">{t("title")}</h1>
       <div dir="ltr" className="mt-6">
         <VerticalTimeline>
@@ -33,7 +33,7 @@ const Projects = () => {
             contentStyle={{ borderRadius: 18 }}
             textClassName="dark:bg-slate-800"
             date="20 days"
-            iconClassName="bg-teal-400/70 dark:bg-slate-800 text-white rounded-full"
+            iconClassName="bg-success-200 dark:bg-slate-800 text-white rounded-full"
             icon={<LuLayoutDashboard />}
           >
             <h3 className="vertical-timeline-element-title text-xl font-bold">
