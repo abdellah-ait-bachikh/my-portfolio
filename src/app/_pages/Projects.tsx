@@ -24,33 +24,39 @@ import Image from "next/image";
 const Projects = () => {
   const t = useTranslations("pages.projects");
   return (
-    <section id="projects" className="min-h-screen mt-1 ">
-      <h1 className=" text-4xl font-bold text-center">
-        {t("title")}
-      </h1>
+    <section id="projects" className="mt-1 ">
+      <h1 className=" text-4xl font-bold text-center">{t("title")}</h1>
       <div dir="ltr" className="mt-6">
         <VerticalTimeline>
           <VerticalTimelineElement
             className="vertical-timeline-element--work  "
-            contentStyle={{borderRadius:18,}}
+            contentStyle={{ borderRadius: 18 }}
             textClassName="dark:bg-slate-800"
             date="20 days"
-            
             iconClassName="bg-teal-400/70 dark:bg-slate-800 text-white rounded-full"
             icon={<LuLayoutDashboard />}
           >
             <h3 className="vertical-timeline-element-title text-xl font-bold">
-              Creative Director
+              Pockemone Pay Dashboard
             </h3>
             <h4 className="vertical-timeline-element-subtitle text-lg">
-              Miami, FL
+              Tan-Tan Morroco
             </h4>
             <div className="w-full">
-              <Image alt="project-1" src='/images/projects/project-1.png' className="w-full" width={100} height={100} />
+              <Image
+                alt="project-1"
+                src="/images/projects/project-1.png"
+                className="w-full"
+                width={100}
+                height={100}
+              />
             </div>
             <p className="text-base">
-              Creative Direction, User Experience, Visual Design, Project
-              Management, Team Leading
+              Pockemone Pay Dashboard is a modern, easy-to-use payment
+              management system designed specifically for Pockemone Snack. This
+              dashboard helps staff efficiently handle customer payments, track
+              transactions, and manage real-time payment data in a fast-paced
+              snack environment.
             </p>
           </VerticalTimelineElement>
           {/* <VerticalTimelineElement
