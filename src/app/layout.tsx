@@ -12,7 +12,8 @@ const rubikSans = Rubik({
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
 import Settings from "@/components/Settings";
-
+import { Flip, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 // const rubikMon = Rubik({
 //   variable: "--font-rubik-mono",
 //   subsets: ["latin"],
@@ -79,6 +80,8 @@ export default async function Layout({
             <Header />
             <main className="z-20">{children}</main>
             <Footer />
+                  <ToastContainer theme="colored" position="top-center" transition={Flip} stacked />
+            
           </NavigationContextProvider>{" "}
         </NextIntlClientProvider>
       </body>
